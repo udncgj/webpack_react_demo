@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>编程猫demo</title>
+    <script>
+      // 如果窗口大小改变执行的函数
+      var html = document.getElementsByTagName('html')[0];
+      function remChange(){
+          var htmlFontSize = (625 - (375 - window.innerWidth) / 2 * 1.5) + '%';
+          html.style.fontSize = htmlFontSize;
+      }
+      remChange();
+      window.onresize = function(){
+        remChange();
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

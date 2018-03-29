@@ -1,0 +1,49 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'D:\\work software\\node\\node.exe',
+1 verbose cli   'D:\\work software\\node\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'run',
+1 verbose cli   'server' ]
+2 info using npm@3.10.10
+3 info using node@v6.11.3
+4 verbose run-script [ 'preserver', 'server', 'postserver' ]
+5 info lifecycle webpack_demo@1.0.0~preserver: webpack_demo@1.0.0
+6 silly lifecycle webpack_demo@1.0.0~preserver: no script for preserver, continuing
+7 info lifecycle webpack_demo@1.0.0~server: webpack_demo@1.0.0
+8 verbose lifecycle webpack_demo@1.0.0~server: unsafe-perm in lifecycle true
+9 verbose lifecycle webpack_demo@1.0.0~server: PATH: D:\work software\node\node_modules\npm\bin\node-gyp-bin;D:\file\webFile\webpack_react_demo\node_modules\.bin;C:\ProgramData\Oracle\Java\javapath;D:\work software\nginx;D:\work software\xampp\mysql\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm\;C:\Program Files\Microsoft SQL Server\120\Tools\Binn\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\Windows Kits\8.1\Windows Performance Toolkit\;D:\work software\JDK\bin;%JAVA_HOME%\jre\bin;D:\work software\MAVEN\apache-maven-3.3.9\bin;D:\work software\svn\TortoiseSVN\bin;D:\work software\node\;D:\work software\python;D:\work software\python\Lib\site-packages\Django-2.0-py3.6.egg\django\bin;D:\work software\python\Scripts;C:\Users\ADMINI~1\AppData\Local\Temp\pip-build-jfl3tply\uwsgi;D:\work software\svn\bin;D:\work software\java\jdk1.8.0_151\bin;D:\work software\java\MySQL Server 5.7\file\bin;D:\work software\java\apache-maven-3.5.2\bin;D:\work software\git\Git\cmd;;D:\work software\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm
+10 verbose lifecycle webpack_demo@1.0.0~server: CWD: D:\file\webFile\webpack_react_demo
+11 silly lifecycle webpack_demo@1.0.0~server: Args: [ '/d /s /c',
+11 silly lifecycle   'set NODE_ENV=dev&& webpack-dev-server --progress --colors' ]
+12 silly lifecycle webpack_demo@1.0.0~server: Returned: code: 1  signal: null
+13 info lifecycle webpack_demo@1.0.0~server: Failed to exec server script
+14 verbose stack Error: webpack_demo@1.0.0 server: `set NODE_ENV=dev&& webpack-dev-server --progress --colors`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (D:\work software\node\node_modules\npm\lib\utils\lifecycle.js:255:16)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at EventEmitter.emit (events.js:191:7)
+14 verbose stack     at ChildProcess.<anonymous> (D:\work software\node\node_modules\npm\lib\utils\spawn.js:40:14)
+14 verbose stack     at emitTwo (events.js:106:13)
+14 verbose stack     at ChildProcess.emit (events.js:191:7)
+14 verbose stack     at maybeClose (internal/child_process.js:920:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:230:5)
+15 verbose pkgid webpack_demo@1.0.0
+16 verbose cwd D:\file\webFile\webpack_react_demo
+17 error Windows_NT 6.1.7601
+18 error argv "D:\\work software\\node\\node.exe" "D:\\work software\\node\\node_modules\\npm\\bin\\npm-cli.js" "run" "server"
+19 error node v6.11.3
+20 error npm  v3.10.10
+21 error code ELIFECYCLE
+22 error webpack_demo@1.0.0 server: `set NODE_ENV=dev&& webpack-dev-server --progress --colors`
+22 error Exit status 1
+23 error Failed at the webpack_demo@1.0.0 server script 'set NODE_ENV=dev&& webpack-dev-server --progress --colors'.
+23 error Make sure you have the latest version of node.js and npm installed.
+23 error If you do, this is most likely a problem with the webpack_demo package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     set NODE_ENV=dev&& webpack-dev-server --progress --colors
+23 error You can get information on how to open an issue for this project with:
+23 error     npm bugs webpack_demo
+23 error Or if that isn't available, you can get their info via:
+23 error     npm owner ls webpack_demo
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]
