@@ -52,22 +52,23 @@ module.exports={
     //模块：例如解读CSS,图片如何转换，压缩
     module:{
         rules:[
+            // {
+            //     test:/\.css$/,
+            //     // use:['style-loader','css-loader']//原配置
+            //     //css和js分离
+            //     use: extractTextPlugin.extract({
+            //         fallback: "style-loader",
+            //         use: ["css-loader","autoprefixer-loader"]
+            //     })
+            // },
             {
-                test:/\.css$/,
-                // use:['style-loader','css-loader']//原配置
-                //css和js分离
-                use: extractTextPlugin.extract({
-                    fallback: "style-loader",
-                    use: ["css-loader","autoprefixer-loader"]
-                })
-            },{
-                test:/\.less$/,
+                test: /\.(less|css)$/,
                 // use:['style-loader','css-loader','less-loader']
                 //autoprefixer-loader浏览器兼容，添加前缀
                 //less分离
                 use: extractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: ["css-loader","less-loader","autoprefixer-loader"]
+                    use: ["css-loader","autoprefixer-loader","less-loader"]
                 })
             },{
                 test:/\.js$/,

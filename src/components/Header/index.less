@@ -1,4 +1,5 @@
 @import "../../less-data.less";
+
 .header{
     position: fixed;
     top: 0;
@@ -6,9 +7,11 @@
     width: 100%;
     height: @headerHeight;
     line-height: @headerHeight;
-    border-top: 1px solid #999;
-    background: @baseColor;
-    color: #fff;
+    // border-bottom: 1px solid #999;
+    box-shadow: 0 2px 5px #ccc;
+    background: @moduleColor;
+    .box-between;
+    // color: #fff;
     .header-left,
     .header-right{
         min-width: 0.5rem;
@@ -16,8 +19,8 @@
         text-align: center;
         img{
             width: auto;
-            height: 0.3rem;
-            margin-top: 0.05rem;
+            height: 0.26rem;
+            margin-top: 0.07rem;
         }
     }
     .header-title{

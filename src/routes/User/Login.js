@@ -4,6 +4,7 @@ import UserChild from './Public.js'
 import request from '../../utils/request'
 import {formUrlData} from '../../utils/service'
 import cookie from '../../utils/cookie'
+import './Login.less'
 
 export default class Login extends Component {
     constructor(){
@@ -56,7 +57,7 @@ export default class Login extends Component {
         return (
             <div className="user">
                 <UserChild data={this.state.data} submitFun={this.handleSubmit} />
-                <div className="user-other box-center">
+                <div className="user-other">
                     <span className="user-other-type" onClick={() => this.props.history.push('/user/register')}>用户注册</span>
                     <span className="user-other-wire"></span>
                     <span className="user-other-type">忘记密码</span>

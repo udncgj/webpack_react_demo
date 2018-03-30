@@ -17,3 +17,8 @@ babel-plugin-transform-runtime
     }
 ]]
 //处理async函数的regeneratorRuntime is not defined错误
+
+less使用混合模式时候报错
+注意webpack配置的引用顺序
+use: ["css-loader","autoprefixer-loader","less-loader"]
+"less-loader"要在"autoprefixer-loader"后面

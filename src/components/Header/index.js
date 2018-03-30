@@ -7,17 +7,22 @@ export default class Header extends Component {
         super(props);
         this.state = {
             main: {
-                left: {type:'back',url:null,img:'./img/back.png'},
-                title: {name: '主页'},
-                right: {type:'Link',url:historyUrl.login,img:'./img/mine.png'}
+                // left: {type:'back',url:null,img:require('../../img/left_arrow.png')},
+                title: {name:'主页'},
+                right: {type:'Link',url:historyUrl.login,img:require('../../img/bubble.png')},
             },
             login: {
-                left: {type:'back',img:'./img/back.png'},
+                left: {type:'back',img:require('../../img/left_arrow.png')},
                 title: {name: '登录'},
             },
             register: {
-                left: {type:'back',img:'./img/back.png'},
-                title: {name: '注册'},
+                left: {type:'back',img:require('../../img/left_arrow.png')},
+                title: {name:'注册'},
+            },
+            personal: {
+                // left: {type:'back',img:require('../../img/left_arrow.png')},
+                title: {name:'我的'},
+                right: {type:'Link',url:historyUrl.login,img:require('../../img/settings1.png')},
             },
         };
     }
@@ -38,11 +43,12 @@ export default class Header extends Component {
         let data = this.state.main;
         // console.log(this.props);
         let url = this.props.history.location.pathname;
-        if(url === historyUrl.login) {console.log('login');data = this.state.login;}
-        if(url === historyUrl.register) {console.log('register');data = this.state.register;}
+        if(url === historyUrl.login) {data = this.state.login;}
+        if(url === historyUrl.register) {data = this.state.register;}
+        if(url === historyUrl.personal) {data = this.state.personal;}
         console.log('header',url,data);
         return (
-            <div className="header box-between">
+            <div className="header">
                 <div className="header-left">{this.headerSet(data.left)}</div>
                 <div className="header-title">{data.title.name}</div>
                 <div className="header-right">{this.headerSet(data.right)}</div>
