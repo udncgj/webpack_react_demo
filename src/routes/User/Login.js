@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 // import './Login.less'
 import UserChild from './Public.js'
 import request from '../../utils/request'
-import {formUrlData} from '../../utils/Service'
+import {formUrlData} from '../../utils/service'
+import cookie from '../../utils/cookie'
 
 export default class Login extends Component {
     constructor(){
@@ -39,6 +40,11 @@ export default class Login extends Component {
             try {
                 let resultData = await request('login', data);
                 console.log(resultData);
+                if(!resultData.code){
+                    cookie.set('jnshuProjectUser',resultData.data.dESkey);
+                }else{
+                    alert(resultData.data);
+                }
             } catch(e) {
                 console.log("Oops, error", e);
             }

@@ -5,7 +5,7 @@ import { addTodo, changeTodo, completeTodo, delTodo,setAppState } from '../../ac
 import AddTodo from '../../components/AddTodo/AddTodo';
 import TodoList from '../../components/TodoList/TodoList';
 // import Footer from '../../components/Footer';
-import { localStorageSave, localStorageGet } from '../../utils/Service';
+import { localStorageSave, localStorageGet } from '../../utils/service';
 
 class App extends Component {
   constructor(props, context) {

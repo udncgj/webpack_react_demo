@@ -33,6 +33,14 @@ input{
 input:focus {
   outline: 0;
 }
+// input框黄色背景问题，不使用box-shadow方法导致的背景不透明
+input:-webkit-autofill {
+  -webkit-animation: autofill-fix 1s infinite;
+}
+@-webkit-keyframes autofill-fix {
+  from { background-color: transparent }
+  to { background-color: transparent }
+}
 .box-center {
   display: flex; /* NEW, Spec - Opera 12.1, Firefox 20+ */
   align-items: center;
