@@ -5,18 +5,12 @@ import { addTodo, changeTodo, completeTodo, delTodo,setAppState } from '../../ac
 import AddTodo from '../../components/AddTodo/AddTodo';
 import TodoList from '../../components/TodoList/TodoList';
 // import Footer from '../../components/Footer';
-import { localStorageSave, localStorageGet } from '../../utils/service';
+import { local } from '../../utils/service';
 
 class App extends Component {
   constructor(props, context) {
     super(props);
-    let list = localStorageGet('bianchengmaoDataList');
-    if(Object.prototype.toString.call(list) === '[object Array]' && !this.props.states.appState){
-      list.forEach((item) => {
-        props.dispatch(addTodo(item))
-      });
-      props.dispatch(setAppState({appState:true}))
-    }
+    // console.log(props.states);
   }
   render() {
     // Injected by connect() call:
@@ -49,7 +43,7 @@ class App extends Component {
     )
   }
   componentDidUpdate(nextProps, nextState){
-    localStorageSave('bianchengmaoDataList', this.props.visibleTodos);
+    local.set('bianchengmaoDataList', this.props.visibleTodos);
   }
 }
   

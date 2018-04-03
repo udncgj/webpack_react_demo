@@ -43,6 +43,6 @@ function delTodo(index) {
 //   return { type: SET_VISIBILITY_FILTER, filter }
 // }
 export function setAppState(data) {
-  return { type: APP_STATE, data }
+  return { type: APP_STATE, ...data }
 }
 export { ADD_TODO, CHANGE_TODO, COMPLETE_TODO, DEL_TODO, addTodo, changeTodo, completeTodo, delTodo }

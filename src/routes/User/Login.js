@@ -2,13 +2,17 @@ import React, { Component } from 'react';
 // import './Login.less'
 import UserChild from './Public.js'
 import request from '../../utils/request'
-import {formUrlData} from '../../utils/service'
+import {form} from '../../utils/service'
 import cookie from '../../utils/cookie'
+import historyUrl from '../../history'
 import './Login.less'
 
-export default class Login extends Component {
-    constructor(){
-        super();
+import { connect } from 'react-redux';
+import { setAppState } from '../../actions';
+
+class Login extends Component {
+    constructor(props){
+        super(props);
         this.state = {
             data: {
                 title: '登录',
@@ -27,12 +31,12 @@ export default class Login extends Component {
         };
     }
 
-    handleSubmit(event) {
+    handleSubmit(e) {
         let data = null;
         let formData = null;
         try {
             // console.log('eventTest ',event.type,event);
-            data = formUrlData($(event.target).serializeArray());
+            data = form.urlData($(e.target).serializeArray());
             // console.log(data);
         } catch (error) {
             console.log(error);
@@ -43,20 +47,24 @@ export default class Login extends Component {
                 console.log(resultData);
                 if(!resultData.code){
                     cookie.set('jnshuProjectUser',resultData.data.dESkey);
+                    // console.log('try:',this,e);
+                    this.propsData.dispatch(setAppState({loginstate:true}));
+                    this.propsData.history.push(historyUrl.personal);
                 }else{
+                    this.propsData.dispatch(setAppState({loginstate:false}));
                     alert(resultData.data);
                 }
             } catch(e) {
                 console.log("Oops, error", e);
             }
         })();
-        event.preventDefault();
+        e.preventDefault();
     }
 
     render(){
         return (
             <div className="user">
-                <UserChild data={this.state.data} submitFun={this.handleSubmit} />
+                <UserChild propsData={this.props} data={this.state.data} submitFun={this.handleSubmit} />
                 <div className="user-other">
                     <span className="user-other-type" onClick={() => this.props.history.push('/user/register')}>用户注册</span>
                     <span className="user-other-wire"></span>
@@ -66,3 +74,10 @@ export default class Login extends Component {
         )
     }
 }
+
+// export default Login
+export default connect((state)=>{
+    return {
+        states: state.states,
+    }
+})(Login)

@@ -22,7 +22,7 @@ export default class Header extends Component {
             personal: {
                 // left: {type:'back',img:require('../../img/left_arrow.png')},
                 title: {name:'我的'},
-                right: {type:'Link',url:historyUrl.login,img:require('../../img/settings1.png')},
+                // right: {type:'Link',url:historyUrl.login,img:require('../../img/settings1.png')},
             },
         };
     }
@@ -46,7 +46,7 @@ export default class Header extends Component {
         if(url === historyUrl.login) {data = this.state.login;}
         if(url === historyUrl.register) {data = this.state.register;}
         if(url === historyUrl.personal) {data = this.state.personal;}
-        console.log('header',url,data);
+        // console.log('header',url,data);
         return (
             <div className="header">
                 <div className="header-left">{this.headerSet(data.left)}</div>

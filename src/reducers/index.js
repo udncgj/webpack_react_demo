@@ -1,25 +1,19 @@
 import { combineReducers } from 'redux';
-import { ADD_TODO, CHANGE_TODO, COMPLETE_TODO, DEL_TODO, APP_STATE } from '../actions';//, SET_VISIBILITY_FILTER, VisibilityFilters
-// const { SHOW_ALL } = VisibilityFilters;
+import { ADD_TODO, CHANGE_TODO, COMPLETE_TODO, DEL_TODO, APP_STATE } from '../actions';
 
-// function visibilityFilter(state = SHOW_ALL, action) {
-//   switch (action.type) {
-//     case SET_VISIBILITY_FILTER:
-//       return action.filter
-//     default:
-//       return state
-//   }
-// }
+// appState: App.js状态
+// loginstate: 登录状态
 function states(state={},action) {
   switch (action.type){
-    case 'APP_STATE':
-      let data = action.data
-      // console.log('states',state,data)
-      let key = Object.keys(data)[0];
-      state[key] = data[key]
+    case APP_STATE:
+        return {...state, ...action};
+    default:
+        return state;
   }
-  return state
+  // return state
 }
+
+
 function todos(state = [], action) {
   switch (action.type) {
     case ADD_TODO:
@@ -64,7 +58,7 @@ function todos(state = [], action) {
 const todoApp = combineReducers({
   // visibilityFilter,
   todos,
-  states
+  states,
 })
 
 export default todoApp

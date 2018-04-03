@@ -22,16 +22,30 @@ import styles from './public.less'
 
 import historyUrl from './history';
 
-const AppRouter = () => (
-    <Router history={BrowserHistory}>
-        <div>
-            <Switch>
-                <Route path="/" component={Home}/>
-                {/* <Route component={Error}/> */}
-            </Switch>
-        </div>
-    </Router>
-)
+import { connect } from 'react-redux';
+import { setAppState } from './actions';
+
+import config from './utils/config';
+
+class AppRouter extends Component{
+// const AppRouter = () => {
+    // console.log(this);
+    constructor(props) {
+        super(props);
+        // console.log(props.states);
+        config(props);
+    }
+    render(){
+        return (
+            <Router history={BrowserHistory}>
+                <div>
+                    <Switch>
+                        <Route path="/" component={Home}/>
+                        {/* <Route component={Error}/> */}
+                    </Switch>
+                </div>
+            </Router>
+)}}
 
 class Home extends Component{
     render(){
@@ -71,7 +85,7 @@ class Main extends Component{
 class User extends Component{
     render(){
         let match = this.props.match;
-        console.log(match);
+        // console.log(match);
         return (
             <div>
                 <Switch>
@@ -84,4 +98,9 @@ class User extends Component{
     }
 }
 
-export default AppRouter;
+// export default AppRouter;
+export default connect((state)=>{
+    return {
+        states: state.states,
+    }
+})(AppRouter)

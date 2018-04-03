@@ -77,14 +77,30 @@ function agreedStrReturn(type,data){
     });
     return result;
 }
+//
+const local = {
+    set:localStorageSave,
+    get:localStorageGet,
+}
+//
+const session = {
+    set:sessionStorageSave,
+    get:sessionStorageGet,
+}
+//表单处理
+const form = {
+    json:formJson,//表单数据转成json
+    urlData:formUrlData,//表单数据转成?xxx=aaa
+}
+// 约定数据处理
+const agreed = {
+    data:agreedDataReturn,//返回value
+    str:agreedStrReturn,//返回string
+}
 export {
-    localStorageSave,
-    localStorageGet,
-    sessionStorageSave,
-    sessionStorageGet,
-    formJson,
-    formUrlData,
+    local,
+    session,
+    form,
     urlSearch,
-    agreedDataReturn,
-    agreedStrReturn
+    agreed,
 }

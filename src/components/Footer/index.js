@@ -20,7 +20,7 @@ export default class Footer extends Component {
         let url = this.props.history.location.pathname;
         if(url === historyUrl.home) data = 0;
         if(url === historyUrl.personal) data = 1;
-        console.log('footer',url,data);
+        // console.log('footer',url,data);
         return (
             <ul className="footer">
                 {this.state.footerList.map((item,index) => {
