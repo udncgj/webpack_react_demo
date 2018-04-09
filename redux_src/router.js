@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom';
-import { DatePicker, message } from 'antd';
 import {
     // HashRouter, hashHistory, Router,
     BrowserRouter as Router,
@@ -11,10 +9,10 @@ import {
     Link
 } from 'react-router-dom'
 
+import App from './containers/App/App'
 import Footer from './components/Footer/index.js'
 import Header from './components/Header/index.js'
 
-import App from './routes/App/App'
 import Login from './routes/User/Login'
 import Error from './routes/Error/Error'
 import Personal from './routes/Personal/Personal'

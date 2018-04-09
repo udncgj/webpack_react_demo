@@ -150,6 +150,11 @@ module.exports={
               target: 'http://localhost:8080/jnshuProject/',
               pathRewrite: {'^/api/' : ''},
               changeOrigin: true
+            },
+            '/dvaApi/': {
+              target: 'http://jsonplaceholder.typicode.com/',
+              pathRewrite: {'^/dvaApi/' : ''},
+              changeOrigin: true
             }
         },
     },

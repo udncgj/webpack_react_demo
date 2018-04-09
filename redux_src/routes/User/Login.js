@@ -9,7 +9,6 @@ import './Login.less'
 
 import { connect } from 'react-redux';
 import { setAppState } from '../../actions';
-import { DatePicker, message } from 'antd';
 
 class Login extends Component {
     constructor(props){
@@ -53,11 +52,10 @@ class Login extends Component {
                     this.propsData.history.push(historyUrl.personal);
                 }else{
                     this.propsData.dispatch(setAppState({loginstate:false}));
-                    message.info(resultData.data);
+                    alert(resultData.data);
                 }
             } catch(e) {
                 console.log("Oops, error", e);
-                message.info("Oops, error"+e);
             }
         })();
         e.preventDefault();

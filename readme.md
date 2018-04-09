@@ -22,3 +22,7 @@ less使用混合模式时候报错
 注意webpack配置的引用顺序
 use: ["css-loader","autoprefixer-loader","less-loader"]
 "less-loader"要在"autoprefixer-loader"后面
+
+antd使用：
+npm install --save antd
+npm install --save-dev babel-plugin-import
