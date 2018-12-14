@@ -1,5 +1,7 @@
+github测试--添加
+
 babel-preset-stage-3
-//.babelrc
+//.babelc-32--修改
 "presets": [
     "stage-3"
 ]
