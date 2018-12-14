@@ -1,5 +1,7 @@
+dssdfsd
+
 babel-preset-stage-3
-//.babelrc
+//.babel
 "presets": [
     "stage-3"
 ]
